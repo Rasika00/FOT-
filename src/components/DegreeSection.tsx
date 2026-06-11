@@ -421,9 +421,6 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                           <h5 className="font-display font-semibold text-xs sm:text-sm text-white group-hover:text-cyan-400 transition-colors">
                             {career}
                           </h5>
-                          <p className="text-xs text-slate-200 font-medium">
-                            Sri Lankan Agro-Tech Complexes, International R&D Institutes, and high-tier engineering ventures.
-                          </p>
                         </div>
                       </div>
                     ))}
