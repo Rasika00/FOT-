@@ -1,0 +1,6 @@
+{
+  "name": "Faculty of Technology - Rajarata University",
+  "description": "Interactive showcase and degree program portal for the Faculty of Technology, Rajarata University of Sri Lanka.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
