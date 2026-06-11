@@ -130,9 +130,7 @@ export default function App() {
       </AnimatePresence>
 
       <div 
-        ref={containerRef}
-        onScroll={handleScroll}
-        className="h-dvh w-full overflow-y-auto snap-y snap-mandatory bg-[#030305] text-white selection:bg-[#22d3ee]/30 selection:text-[#22d3ee] relative"
+        className="h-dvh w-full bg-[#030305] text-white selection:bg-[#22d3ee]/30 selection:text-[#22d3ee] relative overflow-hidden"
       >  
       {/* Global Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#030305]">
