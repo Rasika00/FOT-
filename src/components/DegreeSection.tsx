@@ -152,7 +152,7 @@ const getIconElement = (name: string, className = "w-5 h-5") => {
 
 export function DegreeSection({ program, isActive }: DegreeSectionProps) {
   const [activeTab, setActiveTab] = useState<"pillars" | "curriculum" | "careers" | "aesthetic">("pillars");
-  const [activeSemesterTab, setActiveSemesterTab] = useState<string>("Year 1-2 Foundations");
+  const [activeSemesterTab, setActiveSemesterTab] = useState<string>("Year 1");
 
   // Style mapper for individual degree identities
   const colorMap: { [key: string]: { border: string; bgBtn: string; text: string; bgBadge: string; glow: string } } = {
@@ -372,13 +372,25 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                       Sample Syllabus Courses for {activeSemesterTab}:
                     </p>
                     <div className="space-y-1.5">
-                      {program.curriculumSemesters[activeSemesterTab]?.map((subject) => (
+                      {program.curriculumSemesters[activeSemesterTab]?.map((subject, index) => (
                         <div
-                          key={subject}
-                          className="px-3 py-1.5 bg-white/5 backdrop-blur-sm hover:bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-md flex items-center justify-between text-xs font-sans text-slate-200 transition-colors"
+                          key={`${subject.code}-${index}`}
+                          className="px-3 py-1.5 bg-white/5 backdrop-blur-sm hover:bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-md flex items-center justify-between text-xs font-sans text-slate-200 transition-colors gap-2"
                         >
-                          <span className="font-medium truncate mr-2">{subject}</span>
-                          <span className="text-[9px] font-mono uppercase tracking-widest text-slate-300 bg-black/30 backdrop-blur-md px-1 py-0.5 rounded border border-white/10">CORE</span>
+                          <div className="flex items-center gap-3 truncate">
+                            <span className="font-mono text-[10px] text-[#22d3ee]/70 shrink-0">{subject.code}</span>
+                            <span className="font-medium truncate" title={subject.title}>{subject.title}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="text-[9px] font-mono text-slate-400 bg-black/20 px-1 py-0.5 rounded border border-white/5">{subject.credits} CR</span>
+                            <span className={`text-[9px] font-mono uppercase tracking-widest px-1 py-0.5 rounded border ${
+                              subject.status.startsWith('C') ? 'text-emerald-300 bg-emerald-950/30 border-emerald-500/20' : 
+                              subject.status.startsWith('O') ? 'text-amber-300 bg-amber-950/30 border-amber-500/20' : 
+                              'text-slate-300 bg-slate-900/50 border-white/10'
+                            }`}>
+                              {subject.status.startsWith('C') ? 'CORE' : subject.status.startsWith('O') ? 'OPTIONAL' : subject.status}
+                            </span>
+                          </div>
                         </div>
                       ))}
                     </div>

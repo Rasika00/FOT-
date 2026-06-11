@@ -19,7 +19,13 @@ export interface DegreeProgram {
   labs: string[];
   careerPaths: string[];
   curriculumSemesters: {
-    [key: string]: string[];
+    [key: string]: {
+      semester: number;
+      code: string;
+      title: string;
+      credits: string;
+      status: string;
+    }[];
   };
 }
 

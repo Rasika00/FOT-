@@ -49,36 +49,433 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
       "Environmental Sustainability Officer"
     ],
     curriculumSemesters: {
-      "Year 1-2 Foundations": [
-        "CMT 1301 Fundamentals of Physics for Technology",
-        "CMT 1302 Fundamentals of Chemistry for Technology",
-        "CMT 1303 Fundamentals of Mathematics for Technology",
-        "CMT 1304 Fundamentals of Computers for Technology",
-        "CMT 1306 Fundamentals of Biology for Technology",
-        "BPT 1201 General Microbiology",
-        "BPT 1202 Cell Biology",
-        "FDT 1201 Organic Chemistry",
-        "CMT 1307 Mathematics for Technology I"
+      "Year 1": [
+        {
+          semester: 1,
+          code: "CMT 1301",
+          title: "Fundamentals of Physics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1302",
+          title: "Fundamentals of Chemistry for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1303",
+          title: "Fundamentals of Mathematics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1304",
+          title: "Fundamentals of Computers for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1205",
+          title: "Communication Skills I (English)",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CMT 1306",
+          title: "Fundamentals of Biology for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1201",
+          title: "Personality Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1202",
+          title: "Presentation Skills",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 1201",
+          title: "General Microbiology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 1202",
+          title: "Cell Biology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 1201",
+          title: "Organic Chemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1307",
+          title: "Mathematics for Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1208",
+          title: "Computer Programming for Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1209",
+          title: "Communication Skills II",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "CML 1203",
+          title: "Principles of Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1204",
+          title: "Health and Wellbeing",
+          credits: "2",
+          status: "C"
+        }
       ],
-      "Year 3 Specialization": [
-        "BPT 2202 Introduction to Bioprocess Technology",
-        "BPT 2204 Plant Tissue Culture",
-        "BPT 2205 Molecular Biology",
-        "BPT 2206 Bioreactor Operation and Design",
-        "BPT 2207 Basic Immunology",
-        "BPT 2209 Molecular Biotechnology",
-        "BPT 3201 Molecular Microbiology",
-        "BPT 3302 Bioinformatics",
-        "BPT 3203 Bioprocess Instrumentation & Control"
+      "Year 2": [
+        {
+          semester: 1,
+          code: "BPT 2201",
+          title: "Quality Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 2202",
+          title: "Introduction to Bioprocess Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 2203",
+          title: "Genetics and Evolution",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "BPT 2204",
+          title: "Plant Tissue Culture",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 2205",
+          title: "Molecular Biology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 2202",
+          title: "Basic Biochemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2301",
+          title: "Fundamentals of Statistics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2202",
+          title: "Communication Skills III",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CMT 2306",
+          title: "Mathematics for Technology II",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 2201",
+          title: "Social Sciences and Humanities",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 2202",
+          title: "Engineering Economics",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 1,
+          code: "CML 2206",
+          title: "Indigenous Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "BPT 2206",
+          title: "Bioreactor Operation and Design",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 2207",
+          title: "Basic Immunology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 2108",
+          title: "Quality Assurance and Safety of Bioprocessed Products",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 2209",
+          title: "Molecular Biotechnology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2305",
+          title: "Analytical Chemistry",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 2203",
+          title: "Computational Mathematics",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2204",
+          title: "Foreign Language",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2205",
+          title: "Ethics in Science and Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 2208",
+          title: "Introduction to Marketing",
+          credits: "2",
+          status: "O"
+        }
       ],
-      "Year 4 Advanced & Research": [
-        "BPT 4301 Drug Designing",
-        "BPT 4302 Downstream Process Technology",
-        "BPT 4303 Bioremediation & Waste Management",
-        "BPT 4204 Molecular Virology",
-        "BPT 4205 Plant Cell Culture",
-        "BPT 4206 Pharmaceutical Biotechnology",
-        "BPT 4808 Bioprocess Technology Project (8 Credits)"
+      "Year 3": [
+        {
+          semester: 1,
+          code: "BPT 3201",
+          title: "Molecular Microbiology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3302",
+          title: "Bioinformatics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3203",
+          title: "Bioprocess Instrumentation and Control",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3304",
+          title: "Molecular Modelling",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3205",
+          title: "Bioprocess Optimization and Simulation",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3206",
+          title: "Molecular Immunology and Current Applications",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3207",
+          title: "Enzyme Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3208",
+          title: "Industrial Microbiology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 3101",
+          title: "Legal and Patent Aspects",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 3108",
+          title: "Seminar",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 3209",
+          title: "Scientific Writing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 3610",
+          title: "Internship",
+          credits: "6",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 3102",
+          title: "Industrial Safety",
+          credits: "1",
+          status: "C"
+        }
+      ],
+      "Year 4": [
+        {
+          semester: 1,
+          code: "BPT 4301",
+          title: "Drug Designing",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4302",
+          title: "Downstream Process Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4303",
+          title: "Bioremediation and Waste Management",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4204",
+          title: "Molecular Virology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4205",
+          title: "Plant Cell Culture",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4206",
+          title: "Pharmaceutical Biotechnology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 4207",
+          title: "Bioproduct Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4201",
+          title: "Entrepreneurship",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4202",
+          title: "Human Resource Management",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "BPT 4808",
+          title: "Bioprocess Technology Project",
+          credits: "8",
+          status: "C"
+        }
       ]
     }
   },
@@ -130,35 +527,440 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
       "Production Plant Manager"
     ],
     curriculumSemesters: {
-      "Year 1-2 Foundations": [
-        "CMT 1301 Fundamentals of Physics for Technology",
-        "CMT 1302 Fundamentals of Chemistry for Technology",
-        "CMT 1303 Fundamentals of Mathematics for Technology",
-        "CMT 1304 Fundamentals of Computers for Technology",
-        "CMT 1306 Fundamentals of Biology for Technology",
-        "BPT 1201 General Microbiology",
-        "FDT 2201 Physical Chemistry",
-        "FDT 2203 Introduction to Food Industry",
-        "FDT 2204 Food Preservation"
+      "Year 1": [
+        {
+          semester: 1,
+          code: "CMT 1301",
+          title: "Fundamentals of Physics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1302",
+          title: "Fundamentals of Chemistry for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1303",
+          title: "Fundamentals of Mathematics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1304",
+          title: "Fundamentals of Computer for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1306",
+          title: "Fundamentals of Biology for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1205",
+          title: "Communication Skills I (English)",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CML 1201",
+          title: "Personality Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1202",
+          title: "Presentation Skills",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 1201",
+          title: "General Microbiology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "BPT 1202",
+          title: "Cell Biology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 1201",
+          title: "Organic Chemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1307",
+          title: "Mathematics for Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1208",
+          title: "Computer Programming for Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1209",
+          title: "Communication Skills II",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "CML 1203",
+          title: "Principles of Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1204",
+          title: "Health and Wellbeing",
+          credits: "2",
+          status: "C"
+        }
       ],
-      "Year 3 Specialization": [
-        "FDT 2207 Food Chemistry",
-        "FDT 2208 Food Microbiology",
-        "FDT 2209 Introduction to Human Nutrition",
-        "FDT 3201 Fruits & Vegetables Processing Technology",
-        "FDT 3202 Food Engineering",
-        "FDT 3203 Food Analysis",
-        "FDT 3204 Meat and Fish Processing Technology",
-        "FDT 3205 Functional Food and Food Toxicology",
-        "FDT 3614 Industrial Training"
+      "Year 2": [
+        {
+          semester: 1,
+          code: "FDT 2201",
+          title: "Physical Chemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 2202",
+          title: "Basic Biochemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 2203",
+          title: "Introduction to Food Industry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 2204",
+          title: "Food Preservation",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2301",
+          title: "Fundamental of Statistics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2306",
+          title: "Mathematics for Technology II",
+          credits: "3",
+          status: "-"
+        },
+        {
+          semester: 1,
+          code: "CMT 2202",
+          title: "Communication Skills III",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CML 2201",
+          title: "Social Sciences and Humanities",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 1,
+          code: "CML 2206",
+          title: "Indigenous Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "FDT 2305",
+          title: "Analytical Chemistry",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2206",
+          title: "Food Physics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2207",
+          title: "Food Chemistry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2208",
+          title: "Food Microbiology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2209",
+          title: "Introduction to Human Nutrition",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 2210",
+          title: "Food Biotechnology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 2203",
+          title: "Computational Mathematics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 2204",
+          title: "Foreign Language",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2205",
+          title: "Ethics in Science and Technology",
+          credits: "2",
+          status: "C"
+        }
       ],
-      "Year 4 Advanced & Research": [
-        "FDT 4302 Food Product Development",
-        "FDT 4204 Quality Assurance, Safety & Standards",
-        "FDT 4205 Food Marketing",
-        "FDT 4206 Supply Chain Analysis",
-        "FDT 4209 Sensory Evaluation",
-        "FDT 4801 Research Project (8 Credits)"
+      "Year 3": [
+        {
+          semester: 1,
+          code: "FDT 3201",
+          title: "Fruits & Vegetables Processing Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3202",
+          title: "Food Engineering",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3203",
+          title: "Food Analysis",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3204",
+          title: "Meat and Fish Processing Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3205",
+          title: "Functional Food and Food Toxicology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3206",
+          title: "Dairy Product Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3207",
+          title: "Confectionary and Beverage Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "FDT 3108",
+          title: "Current Topics in Food Industry",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 3209",
+          title: "Cereals and Pulses Processing Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 3101",
+          title: "Legal and Patent Aspects",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "BPT 3207",
+          title: "Enzyme Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "FDT 3212",
+          title: "Spices and Oil Processing Technology",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 2,
+          code: "FDT 3614",
+          title: "Industrial Training",
+          credits: "6",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 3215",
+          title: "Food Packaging Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 3102",
+          title: "Industrial Safety",
+          credits: "1",
+          status: "C"
+        }
+      ],
+      "Year 4": [
+        {
+          semester: 1,
+          code: "FDT 4302",
+          title: "Food Product Development",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 4203",
+          title: "Water Science and Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "FDT 4206",
+          title: "Supply Chain Analysis",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 4107",
+          title: "Scientific Writing",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "FDT 4208",
+          title: "Cleaner Production",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "FDT 4209",
+          title: "Sensory Evaluation",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4201",
+          title: "Entrepreneurship",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4202",
+          title: "Human Resource Management",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "FDT 4801",
+          title: "Research Project",
+          credits: "8",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 4204",
+          title: "Quality Assurance, Safety and Standards in Food Industry",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 4205",
+          title: "Food Marketing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "FDT 4207",
+          title: "Nanotechnology",
+          credits: "2",
+          status: "O"
+        }
       ]
     }
   },
@@ -210,34 +1012,524 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
       "IoT Systems Architect"
     ],
     curriculumSemesters: {
-      "Year 1-2 Foundations": [
-        "CMT 1301 Fundamentals of Physics for Technology",
-        "CMT 1302 Fundamentals of Chemistry for Technology",
-        "CMT 1303 Fundamentals of Mathematics for Technology",
-        "CMT 1304 Fundamentals of Computers for Technology",
-        "ENT 1203 Engineering Drawing",
-        "ENT 1204 Workshop Technology I",
-        "ENT 1301 Introduction to Basic Electronics",
-        "ENT 1302 Fundamentals of Electricity & Magnetism"
+      "Year 1": [
+        {
+          semester: 1,
+          code: "CML 1201",
+          title: "Personality Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1202",
+          title: "Presentation Skills",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1205",
+          title: "Communication Skills I (English)",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CMT 1301",
+          title: "Fundamentals of Physics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1302",
+          title: "Fundamentals of Chemistry for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1303",
+          title: "Fundamentals of Mathematics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1304",
+          title: "Fundamentals of Computer for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1203",
+          title: "Principles of Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1204",
+          title: "Health and Wellbeing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1208",
+          title: "Computer Programming for Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1209",
+          title: "Communication Skills II",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "CMT 1307",
+          title: "Mathematics for Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1203",
+          title: "Engineering Drawing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1204",
+          title: "Workshop Technology I",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1301",
+          title: "Introduction to Basic Electronics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1302",
+          title: "Fundamentals of Electricity and Magnetism",
+          credits: "3",
+          status: "C"
+        }
       ],
-      "Year 3 Specialization": [
-        "EET 2202 Electricity Network",
-        "EET 2208 Introduction to Electrical Power",
-        "EET 2301 Digital & Analog Electronics",
-        "EET 2203 Electronic Devices and Circuits",
-        "EET 2204 Electrical Measurements and Instrumentation",
-        "EET 2206 Signals and Systems",
-        "EET 2305 Electrical Machines",
-        "EET 3301 Electrical Power Systems",
-        "EET 3304 Digital Signal Processing",
-        "EET 3305 Control Systems",
-        "EET 3607 Industrial Training"
+      "Year 2": [
+        {
+          semester: 1,
+          code: "CML 2201",
+          title: "Social Sciences and Humanity",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 2202",
+          title: "Engineering Economics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 2206",
+          title: "Indigenous Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CMT 2202",
+          title: "Communication Skills III",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CMT 2301",
+          title: "Fundamentals of Statistics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2306",
+          title: "Mathematics for Technology II",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 2202",
+          title: "Electricity Network",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 2208",
+          title: "Introduction to Electrical Power",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 2301",
+          title: "Digital & Analog Electronics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 2202",
+          title: "Operating Systems",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 2303",
+          title: "Data Structures and Algorithms",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 2304",
+          title: "Object Oriented Programming",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT",
+          title: "2204/EET 2207 Computer Aided Design (CAD)",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML",
+          title: "2204/CML 2205 Foreign Language/Ethics in Science and Tech",
+          credits: "2/2",
+          status: "O/C"
+        },
+        {
+          semester: 2,
+          code: "CML 2208",
+          title: "Introduction to Marketing",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CMT 2203",
+          title: "Computational Mathematics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 2203",
+          title: "Electronic Devices and Circuits",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 2204",
+          title: "Electrical Measurements and Instrumentation",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 2206",
+          title: "Signals and Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 2305",
+          title: "Electrical Machines",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2213",
+          title: "Data Communication and Networking",
+          credits: "2",
+          status: "O"
+        }
       ],
-      "Year 4 Advanced & Research": [
-        "EET 4301 Electronic Circuit Design and Simulations",
-        "EET 4304 Power Electronics",
-        "EET 4210 Electronic Product Design",
-        "EET 4818 Undergraduate Project"
+      "Year 3": [
+        {
+          semester: 1,
+          code: "CML 3101",
+          title: "Legal and Patent Aspects",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 3202",
+          title: "Communication Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 3203",
+          title: "Computer Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 3206",
+          title: "Automation Technology I",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 3209",
+          title: "Automobile Electrical Systems",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 3210",
+          title: "Electrical Installations",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 1,
+          code: "EET 3211",
+          title: "Machine Element Design",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 3301",
+          title: "Electrical Power Systems",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 3304",
+          title: "Digital Signal Processing",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 3305",
+          title: "Control Systems",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3217",
+          title: "Advanced Computer Networking",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 3315",
+          title: "Internet of Things",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 3102",
+          title: "Industrial Safety",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 3607",
+          title: "Industrial Training",
+          credits: "6",
+          status: "C"
+        }
+      ],
+      "Year 4": [
+        {
+          semester: 1,
+          code: "CML 4201",
+          title: "Entrepreneurship",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 4202",
+          title: "Human Resources Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 4202",
+          title: "Embedded System Design",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 4206",
+          title: "Automation Technology II",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 1,
+          code: "EET 4207",
+          title: "Telecommunication Systems",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 4208",
+          title: "Fiber Optics Techniques",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 4216",
+          title: "Energy and Environment",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET 4301",
+          title: "Electronic Circuit Design and Simulations",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 4303",
+          title: "Electrical Energy Utilization",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "EET",
+          title: "4304/EET 4305 Power Electronics/Digital Communication",
+          credits: "3/3",
+          status: "C/O"
+        },
+        {
+          semester: 1,
+          code: "EET 4818",
+          title: "Undergraduate Project",
+          credits: "4",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 4209",
+          title: "High Voltage Engineering",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "EET 4210",
+          title: "Electronic Product Design",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "EET 4213",
+          title: "Antenna and Propagation",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "EET 4214",
+          title: "Wireless Communication",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "EET 4215",
+          title: "Mechatronics",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "EET 4217",
+          title: "Electrical Machines and Drives",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "EET 4219",
+          title: "Green Energy and Zero Emission Concepts",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 2,
+          code: "EET 4220",
+          title: "Graphical Programming and Data Acquisition",
+          credits: "2",
+          status: "-"
+        },
+        {
+          semester: 2,
+          code: "EET 4311",
+          title: "Internet Technology and Applications",
+          credits: "3",
+          status: "-"
+        },
+        {
+          semester: 2,
+          code: "EET 4312",
+          title: "Power System Analysis",
+          credits: "3",
+          status: "-"
+        },
+        {
+          semester: 2,
+          code: "EET 4818",
+          title: "Undergraduate Project (cont.)",
+          credits: "4",
+          status: "C"
+        }
       ]
     }
   },
@@ -289,37 +1581,531 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
       "Production Development Specialist"
     ],
     curriculumSemesters: {
-      "Year 1-2 Foundations": [
-        "CMT 1301 Fundamentals of Physics for Technology",
-        "CMT 1302 Fundamentals of Chemistry for Technology",
-        "CMT 1303 Fundamentals of Mathematics for Technology",
-        "CMT 1304 Fundamentals of Computers for Technology",
-        "ENT 1301 Introduction to Basic Electronics",
-        "ENT 1302 Fundamentals of Electricity & Magnetism",
-        "ENT 1204 Workshop Technology I",
-        "ENT 1203 Engineering Drawing"
+      "Year 1": [
+        {
+          semester: 1,
+          code: "CMT 1301",
+          title: "Fundamentals of Physics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1302",
+          title: "Chemistry for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1303",
+          title: "Mathematics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1304",
+          title: "Computer for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1201",
+          title: "Personality Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 1202",
+          title: "Presentation Skills",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1205",
+          title: "Communication Skills I",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "ENT 1301",
+          title: "Basic Electronics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1302",
+          title: "Electricity and Magnetism",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1307",
+          title: "Mathematics for Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1208",
+          title: "Programming for Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1204",
+          title: "Workshop Technology I",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1203",
+          title: "Principles of Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1204",
+          title: "Health and Wellbeing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1209",
+          title: "Communication Skills II",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "ENT 1203",
+          title: "Engineering Drawing",
+          credits: "2",
+          status: "C"
+        }
       ],
-      "Year 3 Specialization": [
-        "MTT 2201 Fundamentals of Solid-State Physics",
-        "MTT 2202 Chemistry for Materials Technology",
-        "MTT 2203 Introduction to Ceramic Technology",
-        "MTT 2204 Computer Aided Design (CAD)",
-        "MTT 2210 Mechanical Behavior of Materials",
-        "MTT 2311 Ceramic Technology I",
-        "MTT 2205 Introduction to Metallurgy",
-        "MTT 2209 Introduction to Polymer Technology",
-        "MTT 3308 Polymer Technology I",
-        "MTT 3307 Metallurgy I",
-        "MTT 3306 Ceramic Technology II",
-        "MTT 3609 Industrial Training (6 Credits)"
+      "Year 2": [
+        {
+          semester: 1,
+          code: "MTT 2201",
+          title: "Solid-State Physics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 2202",
+          title: "Chemistry for Materials Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 2203",
+          title: "Ceramic Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 2204",
+          title: "CAD",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2306",
+          title: "Mathematics for Technology II",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2301",
+          title: "Statistics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 2201",
+          title: "Social Sciences and Humanities",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 2206",
+          title: "Indigenous Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 2202",
+          title: "Engineering Economics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2202",
+          title: "Communication Skills III",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "ICT 2304",
+          title: "Object Oriented Programming",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 2206",
+          title: "Graphical Programming",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 2210",
+          title: "Mechanical Behavior of Materials",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2311",
+          title: "Ceramic Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2205",
+          title: "Introduction to Metallurgy",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2207",
+          title: "Measurements, Error Analysis, Instrumentation",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2108",
+          title: "Chemical Engineering Sciences",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2209",
+          title: "Polymer Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 2110",
+          title: "Introduction to Thermodynamics",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 2203",
+          title: "Computational Mathematics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 2204",
+          title: "Foreign Language",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2208",
+          title: "Introduction to Marketing",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2205",
+          title: "Ethics in Science and Technology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 2206",
+          title: "Multimedia and Web Technology",
+          credits: "2",
+          status: "O"
+        }
       ],
-      "Year 4 Advanced & Research": [
-        "MTT 4201 Fluid Mechanics",
-        "MTT 4121 Research Methodology & Scientific Writing",
-        "MTT 4219 Applied Mechanics",
-        "MTT 4104 Glass Technology",
-        "MTT 4305 Polymer Technology II",
-        "MTT 4820 Research Project (8 Credits)"
+      "Year 3": [
+        {
+          semester: 1,
+          code: "MTT 3308",
+          title: "Polymer Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3307",
+          title: "Metallurgy I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3306",
+          title: "Ceramic Technology II",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3202",
+          title: "Degradation of Materials",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3103",
+          title: "Ceramic Pilot Plant Practices",
+          credits: "1",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 3204",
+          title: "Workshop Technology II",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3212",
+          title: "Non-Destructive Testing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 3111",
+          title: "Thermodynamics for Materials Technology",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 3101",
+          title: "Legal and Patent Aspects",
+          credits: "1",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 3102",
+          title: "Industrial Safety",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 3609",
+          title: "Industrial Training",
+          credits: "6",
+          status: "C"
+        }
+      ],
+      "Year 4": [
+        {
+          semester: 1,
+          code: "MTT 4201",
+          title: "Fluid Mechanics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 4121",
+          title: "Research Methodology and Scientific Writing",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 4303",
+          title: "Ceramic Technology III",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4219",
+          title: "Applied Mechanics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 4104",
+          title: "Glass Technology",
+          credits: "1",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4305",
+          title: "Polymer Technology II",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4206",
+          title: "Mineral Processing",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4307",
+          title: "Metallurgy II",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4820",
+          title: "Research Project",
+          credits: "-",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "MTT 4108",
+          title: "Directed Reading",
+          credits: "1",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4109",
+          title: "Seminar",
+          credits: "1",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "MTT 4210",
+          title: "Work Shadowing",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 4201",
+          title: "Entrepreneurship",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4202",
+          title: "Human Resource Management",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4820",
+          title: "Research Project",
+          credits: "8",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 4311",
+          title: "Advanced Materials",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4312",
+          title: "Characterization of Materials",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4213",
+          title: "Manufacturing Systems",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4114",
+          title: "Quality Management",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 4215",
+          title: "Cleaner Production",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "MTT 4216",
+          title: "Industrial Metrology",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4217",
+          title: "Composite Materials",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "MTT 4218",
+          title: "Paint Technology",
+          credits: "2",
+          status: "O"
+        }
       ]
     }
   },
@@ -371,36 +2157,461 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
       "Information Security Specialist"
     ],
     curriculumSemesters: {
-      "Year 1-2 Foundations": [
-        "ICT 1202 Electronic Circuits",
-        "ICT 1305 Program Designing and Programming",
-        "ICT 1111 Productivity and Collaborative Tools",
-        "CMT 1301 Fundamentals of Physics for Technology",
-        "CMT 1303 Fundamentals of Mathematics for Technology",
-        "ICT 1207 Human Computer Interaction",
-        "ICT 1108 Skill Development Project I",
-        "ICT 1209 Web Technologies",
-        "ICT 1210 Introduction to Multimedia"
+      "Year 1": [
+        {
+          semester: 1,
+          code: "ICT 1202",
+          title: "Electronic Circuits",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 1305",
+          title: "Program Designing and Programming",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 1111",
+          title: "Productivity and Collaborative Tools",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1301",
+          title: "Fundamentals of Physics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1303",
+          title: "Fundamentals of Mathematics for Technology",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 1205",
+          title: "Communication Skills I",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CML 1201",
+          title: "Personality Development",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 1207",
+          title: "Human Computer Interaction",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 1108",
+          title: "Skill Development Project I",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 1209",
+          title: "Web Technologies",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 1210",
+          title: "Introduction to Multimedia",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1307",
+          title: "Mathematics For Technology I",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CMT 1209",
+          title: "Communication Skills II",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 2,
+          code: "CML 1203",
+          title: "Principles of Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 1204",
+          title: "Health and Wellbeing",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ENT 1302",
+          title: "Fundamentals of Electricity and Magnetism",
+          credits: "3",
+          status: "O"
+        }
       ],
-      "Year 3 Specialization": [
-        "ICT 2202 Operating Systems",
-        "ICT 2303 Data Structures and Algorithms",
-        "ICT 2304 Object Oriented Programming",
-        "ICT 2207 Software System Design",
-        "ICT 2212 Skill Development Project II",
-        "ICT 2305 Computational Mathematics",
-        "ICT 2308 Database Systems",
-        "ICT 2213 Data Communication and Networking",
-        "ICT 3201 Software Project Management",
-        "ICT 3312 Software Verification and Validation"
+      "Year 2": [
+        {
+          semester: 1,
+          code: "ICT 2202",
+          title: "Operating Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 2303",
+          title: "Data Structures and Algorithms",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 2304",
+          title: "Object Oriented Programming",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 2207",
+          title: "Software System Design",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 2212",
+          title: "Skill Development Project II",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 2202",
+          title: "Engineering Economics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CMT 2202",
+          title: "Communication Skills III",
+          credits: "2",
+          status: "C-NGP"
+        },
+        {
+          semester: 1,
+          code: "CMT 2306",
+          title: "Mathematics for Technology II",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 2305",
+          title: "Computational Mathematics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2308",
+          title: "Database Systems",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2109",
+          title: "Communication and Learning Skills",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2211",
+          title: "Fundamentals of Statistics",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2213",
+          title: "Data Communication and Networking",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 2214",
+          title: "Introduction to Information Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 2204",
+          title: "Foreign Language",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "CML 2205",
+          title: "Ethics in Science and Technology",
+          credits: "2",
+          status: "C"
+        }
       ],
-      "Year 4 Advanced & Research": [
-        "ICT 4301 Mobile Computing",
-        "ICT 4202 Internet Applications",
-        "ICT 4203 Software Engineering",
-        "ICT 4205 Current Topics in Information Technology",
-        "ICT 4808 Research Project (8 Credits)",
-        "ICT 4609 Industrial Training (6 Credits)"
+      "Year 3": [
+        {
+          semester: 1,
+          code: "ICT 3201",
+          title: "Software Project Management",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3203",
+          title: "Scientific Computer Applications",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3206",
+          title: "Skill Development Project III",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3307",
+          title: "Computational Statistics",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 3208",
+          title: "Design and Analysis of Algorithms",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3312",
+          title: "Software Verification and Validation",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 3315",
+          title: "Internet of Things",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 3217",
+          title: "Advance Computer Networks",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 3218",
+          title: "Basics of Virtual Reality",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 3101",
+          title: "Legal and Patent Aspects",
+          credits: "1",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3204",
+          title: "E-Business Systems",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3209",
+          title: "Computer Organization and Architecture",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3310",
+          title: "Information Security",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3311",
+          title: "Robotics",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 3213",
+          title: "Advanced Software System Design",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 3314",
+          title: "Embedded Systems",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3216",
+          title: "Research Methodology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 3219",
+          title: "Mobile Application Development",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 3220",
+          title: "Basics of Game Development",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 3203",
+          title: "Basics of Accountancy",
+          credits: "2",
+          status: "C"
+        }
+      ],
+      "Year 4": [
+        {
+          semester: 1,
+          code: "ICT 4301",
+          title: "Mobile Computing",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 4202",
+          title: "Internet Applications",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 4203",
+          title: "Software Engineering",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 4205",
+          title: "Current Topics in Information Technology",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "ICT 4306",
+          title: "Data Science",
+          credits: "3",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 4207",
+          title: "Artificial Intelligence",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 4210",
+          title: "Digital Image Processing",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "ICT 4211",
+          title: "Computer Graphics and Visualization",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 1,
+          code: "CML 4201",
+          title: "Entrepreneurship",
+          credits: "2",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "CML 4202",
+          title: "Human Resource Management",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "ICT 4808",
+          title: "Research Project",
+          credits: "8",
+          status: "C"
+        },
+        {
+          semester: 2,
+          code: "ICT 4609",
+          title: "Industrial Training",
+          credits: "6",
+          status: "C"
+        }
       ]
     }
   }
