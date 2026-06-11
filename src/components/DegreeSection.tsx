@@ -195,92 +195,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
 
   const scheme = colorMap[program.accentClass] || colorMap.cyan;
 
-  // Custom organic bubbles renderer for BBST streams (Bioprocess & Food)
-  const renderOrganicBubbles = (isAmber = false) => {
-    return (
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(6)].map((_, i) => {
-          const size = Math.random() * 50 + 25; // 25px to 75px
-          const left = Math.random() * 85 + 5;  // 5% to 90%
-          const delay = i * 2.5;                // Staggered delays
-          const duration = Math.random() * 6 + 14; // 14s to 20s
-          return (
-            <div
-              key={i}
-              className={isAmber ? "bubble-cell-amber" : "bubble-cell"}
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`,
-                animationDuration: `${duration}s`,
-              }}
-            />
-          );
-        })}
-      </div>
-    );
-  };
 
-  // Custom visual background SVGs to reflect distinct technology streams
-  const renderBackgroundGraphics = () => {
-    switch (program.id) {
-      case "bbst-bp":
-        return null;
-      case "bbst-ft":
-        return (
-          <>
-            {renderOrganicBubbles(true)}
-            <svg className="absolute right-0 bottom-0 w-2/3 h-2/3 opacity-[0.45] pointer-events-none text-amber-500 z-0" viewBox="0 0 100 100" fill="none">
-              {/* Hexagonal Food Lattices */}
-              <polygon points="30,20 45,11 60,20 60,37 45,46 30,37" stroke="currentColor" strokeWidth="0.8" />
-              <polygon points="60,37 75,28 90,37 90,54 75,63 60,54" stroke="currentColor" strokeWidth="0.8" />
-              <polygon points="30,54 45,46 60,54 60,71 45,80 30,71" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1 1" />
-              <circle cx="45" cy="11" r="1.5" fill="currentColor" />
-              <circle cx="75" cy="63" r="1.5" fill="currentColor" />
-            </svg>
-          </>
-        );
-      case "bet-ee":
-        return (
-          <svg className="absolute right-0 top-10 w-2/3 h-2/3 opacity-[0.70] pointer-events-none text-cyan-400 z-0" viewBox="0 0 100 100" fill="none">
-            {/* Circuit tracer paths with glowing movement */}
-            <rect x="10" y="10" width="30" height="30" rx="3" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
-            <rect x="20" y="20" width="10" height="10" rx="1" stroke="currentColor" strokeWidth="0.3" className="opacity-30" />
-            
-            <path d="M40 25 L65 25 L75 35 L90 35" stroke="currentColor" strokeWidth="0.8" className="circuit-path-pulse" />
-            <circle cx="90" cy="35" r="2" fill="currentColor" className="circuit-node-pulse" />
-            
-            <path d="M30 40 L30 68 L52 68" stroke="currentColor" strokeWidth="0.6" className="circuit-path-pulse" style={{ animationDelay: "1.5s" }} />
-            <circle cx="52" cy="68" r="1.5" fill="currentColor" className="circuit-node-pulse" />
- 
-            {/* Additional custom branch representing advanced tech integrations */}
-            <path d="M12 40 L12 75 L32 75" stroke="currentColor" strokeWidth="0.5" className="circuit-path-pulse" style={{ animationDelay: "3s" }} />
-            <circle cx="32" cy="75" r="1.5" fill="currentColor" className="circuit-node-pulse" />
-          </svg>
-        );
-      case "bet-mt":
-        return (
-          <svg className="absolute right-0 bottom-10 w-2/3 h-2/3 opacity-[0.45] pointer-events-none text-purple-500 z-0" viewBox="0 0 100 100" fill="none">
-            {/* Crystal atoms lattice */}
-            <circle cx="50" cy="20" r="3" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="20" cy="50" r="3" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="80" cy="50" r="3" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="50" cy="80" r="3" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="50" cy="50" r="4" stroke="currentColor" strokeWidth="0.8" />
-            <line x1="50" y1="23" x2="50" y2="46" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="50" y1="54" x2="50" y2="77" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="23" y1="50" x2="46" y2="50" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="54" y1="50" x2="77" y2="50" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="22" y1="48" x2="48" y2="22" stroke="currentColor" strokeWidth="0.3" strokeDasharray="1 1" />
-          </svg>
-        );
-      case "bict":
-        return <InteractiveBictCanvas />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <div className="w-full h-full relative flex items-center justify-center px-4 md:px-12 lg:px-24">
@@ -292,8 +207,6 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
       {/* Cyber Grid */}
       <div className="absolute inset-0 bg-cyber-grid pointer-events-none opacity-20" />
 
-      {/* Vector stream */}
-      {renderBackgroundGraphics()}
 
       {/* Primary Container Grid */}
       <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full max-h-[85vh] overflow-y-auto lg:overflow-visible no-scrollbar pt-12 pb-16 lg:pt-0 lg:pb-0">
@@ -316,12 +229,12 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold tracking-tight text-white leading-tight">
               {program.title}
             </h2>
-            <p className={`text-sm sm:text-base md:text-md italic font-medium mt-1.5 ${scheme.text} opacity-90`}>
+            <p className={`text-base sm:text-lg md:text-xl italic font-semibold mt-1.5 ${scheme.text} drop-shadow-md`}>
               "{program.tagline}"
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed max-w-xl">
+          <p className="text-sm sm:text-base text-white font-sans leading-relaxed max-w-xl font-medium drop-shadow-md">
             {program.description}
           </p>
 
@@ -403,7 +316,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                   exit={{ opacity: 0, y: -15 }}
                   className="space-y-4 h-full flex flex-col justify-center"
                 >
-                  <p className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Major Study Streams & Objectives</p>
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-200">Major Study Streams & Objectives</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {program.corePillars.map((pillar) => (
                       <div
@@ -417,7 +330,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                           <h5 className="font-display font-bold text-xs sm:text-sm text-white group-hover:text-cyan-400 transition-colors">
                             {pillar.title}
                           </h5>
-                          <p className="text-[11px] leading-normal text-slate-300 group-hover:text-slate-200 transition-colors">
+                          <p className="text-xs leading-relaxed text-slate-200 font-medium group-hover:text-white transition-colors">
                             {pillar.description}
                           </p>
                         </div>
@@ -482,7 +395,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                   exit={{ opacity: 0, y: -15 }}
                   className="space-y-4 h-full flex flex-col justify-center"
                 >
-                  <p className="text-[11px] font-mono uppercase tracking-widest text-slate-400 text-left">Industrial Placement Targets & Academic Prospects</p>
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-200 text-left">Industrial Placement Targets & Academic Prospects</p>
                   <div className="relative border-l border-white/10 ml-3 space-y-4">
                     {program.careerPaths.map((career, i) => (
                       <div key={career} className="relative pl-6 text-left group">
@@ -496,7 +409,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
                           <h5 className="font-display font-semibold text-xs sm:text-sm text-white group-hover:text-cyan-400 transition-colors">
                             {career}
                           </h5>
-                          <p className="text-[10px] text-slate-300">
+                          <p className="text-xs text-slate-200 font-medium">
                             Sri Lankan Agro-Tech Complexes, International R&D Institutes, and high-tier engineering ventures.
                           </p>
                         </div>

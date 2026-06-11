@@ -92,7 +92,7 @@ export function LocationSection() {
             <div className="w-full h-full rounded-xl overflow-hidden relative">
               <iframe
                 title="Google Map Rusl Faculty of Technology, Mihintale"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.068202574163!2d80.50085857597148!3d8.361494791672322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m3!1d15784.270929559388!2d80.5034!3d8.3614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+                src="https://maps.google.com/maps?q=Faculty%20of%20Technology%2C%20Rajarata%20University%20of%20Sri%20Lanka%2C%20Mihintale&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
                 allowFullScreen={true}
                 loading="lazy"

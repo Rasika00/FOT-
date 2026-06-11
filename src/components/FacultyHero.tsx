@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { FACULTY_STATS } from "../data/degrees";
 import { School, ChevronDown, GraduationCap, Compass, Sparkles } from "lucide-react";
-import bgImage1 from "../assets/urajarata-uni.jpg";
 
 export interface FacultyHeroProps {
   isActive: boolean;
@@ -57,7 +56,7 @@ export function FacultyHero({ isActive, onExplore }: FacultyHeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-slate-200 drop-shadow-md text-sm sm:text-base md:text-lg font-sans max-w-xl leading-relaxed"
+              className="text-white drop-shadow-lg text-base sm:text-lg md:text-xl font-sans max-w-2xl leading-relaxed font-medium"
             >
               Nurturing professional technological leaders, innovators, and research engineers for local and global high-tech industries. Anchored in Mihintale, the cradle of Sri Lankan illumination.
             </motion.p>
@@ -111,10 +110,10 @@ export function FacultyHero({ isActive, onExplore }: FacultyHeroProps) {
                 <Sparkles className="w-4 h-4 text-cyan-500/20 group-hover:text-cyan-400 transition-colors duration-300" />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-xs text-white tracking-wide uppercase mt-2 group-hover:text-cyan-400 transition-colors duration-300 drop-shadow">
+                <h3 className="font-display font-semibold text-sm text-white tracking-wide uppercase mt-2 group-hover:text-cyan-400 transition-colors duration-300 drop-shadow">
                   {stat.label}
                 </h3>
-                <p className="text-[10px] sm:text-xs text-slate-300 line-clamp-2 mt-1 leading-normal drop-shadow-sm">
+                <p className="text-xs sm:text-sm text-slate-100 line-clamp-2 mt-1.5 leading-relaxed drop-shadow-md font-medium">
                   {stat.description}
                 </p>
               </div>

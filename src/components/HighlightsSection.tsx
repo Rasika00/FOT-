@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Sparkles, ThumbsUp, MessageSquare, Share2, Award, Users, BookOpen, ExternalLink } from "lucide-react";
+import { Sparkles, ThumbsUp, MessageSquare, Share2, Award, Users, BookOpen, ExternalLink, Globe, Rocket } from "lucide-react";
 
 interface HighlightItem {
   id: string;
@@ -13,56 +13,61 @@ interface HighlightItem {
   likes: number;
   comments: number;
   tag: string;
+  url: string;
 }
 
 const HIGHLIGHTS: HighlightItem[] = [
   {
     id: "feed-1",
-    category: "Exhibition",
-    title: "ProFood ProPack 2025: Innovation Trophy Secured",
-    excerpt: "BBST Food Technology students swept national acclaim at Sri Lanka's largest food expo, demonstrating advanced functional food formulations and modern packaging prototypes developed inside our laboratories.",
-    source: "FOT Media & Exhibitions Unit",
+    category: "Achievement",
+    title: "AFRU Recognized for Innovation at ProFood ProPack",
+    excerpt: "The Association of Food Technology (AFRU) has once again showcased its excellence in innovation by securing two prestigious awards at the ProFood ProPack AgBiz Exhibition 2025.",
+    source: "Department of EET",
     image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop",
-    time: "2 days ago",
+    time: "Mar 2026",
     likes: 184,
     comments: 42,
-    tag: "FoodTech"
+    tag: "FoodTech",
+    url: "https://fot.rjt.ac.lk/afru-recognized-for-innovation-at-profood-propack-2025/"
   },
   {
     id: "feed-2",
-    category: "Research",
-    title: "World Top 2% Scientist Ranking Milestone",
-    excerpt: "We congratulate the senior academic panel of the Faculty of Technology on having multiple professors listed in the Stanford University Top 2% Global Scientists index for 2025-2026 publications.",
-    source: "Academic Senate RJT",
+    category: "Exhibition",
+    title: "Academic Calendar – 2023/2024 Academic Year",
+    excerpt: "The updated academic calendar for the 2023/2024 academic year for all batches has been officially released. The academic year started on 8th December 2025.",
+    source: "FOT Admin",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
-    time: "Last week",
+    time: "Feb 2026",
     likes: 245,
     comments: 31,
-    tag: "Research"
+    tag: "Notice",
+    url: "https://fot.rjt.ac.lk/academic-calendar-2023-2024-academic-year/"
   },
   {
     id: "feed-3",
-    category: "Industrial",
-    title: "BICT Enterprise Bridging: Virtusa HQ Visit",
-    excerpt: "Level 3 Information & Communication Technology students traveled to Virtusa Colombo. The intensive sessions focused on enterprise cloud architecture, active DevOps pipelines, and upcoming technical placement intakes.",
-    source: "Faculty Industry Liaison",
+    category: "Research",
+    title: "Achievement of Prof. Nalin N. Wijayawardene",
+    excerpt: "The Faculty of Technology proudly congratulates Prof. Nalin N. Wijayawardene on receiving the prestigious Young Asian Mycologist Award at the Asian Mycological Congress (AMC) in China.",
+    source: "Faculty Senate",
     image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop",
-    time: "May 2026",
+    time: "Dec 2025",
     likes: 156,
     comments: 18,
-    tag: "BICT"
+    tag: "Award",
+    url: "https://fot.rjt.ac.lk/celebrating-the-achievement-of-prof-nalin-n-wijayawardene/"
   },
   {
     id: "feed-4",
-    category: "Achievement",
-    title: "National Tech Arena Smart-IoT Championship",
-    excerpt: "BET Electrical and Electronic Engineering students won the runner-up slot in the National Automation Hackathon, showing off a low-cost IoT environment analyzer powered by custom circuit layouts built right on our campus.",
-    source: "Rajarata Electronics Society",
+    category: "Industrial",
+    title: "ICT Students Visit Virtusa for Industry Exposure",
+    excerpt: "Level 3 Information & Communication Technology students traveled to Virtusa and Cloud Solution for a SLASSCOM-Facilitated Industry Exposure Programme, gaining hands-on enterprise experience.",
+    source: "Industry Liaison",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
-    time: "April 2026",
+    time: "Recent",
     likes: 212,
     comments: 29,
-    tag: "EET"
+    tag: "BICT",
+    url: "https://fot.rjt.ac.lk/ict-students-visit-virtusa-and-cloud-solution-for-slasscom-facilitated-industry-exposure-programme/"
   }
 ];
 
@@ -83,7 +88,7 @@ export function HighlightsSection() {
           <h2 className="text-2xl sm:text-3.5xl font-display font-extrabold tracking-tight text-white uppercase">
             LATEST OUTCOMES & <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">HIGHLIGHTS</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl font-sans">
+          <p className="text-sm sm:text-base text-white max-w-2xl font-sans font-medium drop-shadow-md">
             A snapshot into active campus life, professional placements, national exhibitions, and breakthrough research publications originating from our Mihintale faculty.
           </p>
         </div>
@@ -123,10 +128,10 @@ export function HighlightsSection() {
                       <span>{item.time}</span>
                     </div>
 
-                    <h4 className="font-display font-extrabold text-sm text-white group-hover:text-blue-400 transition-colors leading-snug line-clamp-2">
+                    <h4 className="font-display font-extrabold text-base text-white group-hover:text-blue-400 transition-colors leading-snug line-clamp-2">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed font-sans line-clamp-3">
+                    <p className="text-xs sm:text-sm text-slate-100 leading-relaxed font-sans line-clamp-3 font-medium">
                       {item.excerpt}
                     </p>
                   </div>
@@ -143,10 +148,15 @@ export function HighlightsSection() {
                         <span>{item.comments}</span>
                       </button>
                     </div>
-                    
-                    <button className="text-slate-400 hover:text-white transition-colors cursor-pointer">
-                      <Share2 className="w-3.5 h-3.5" />
-                    </button>
+                    <a 
+                      href={item.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center gap-1 text-[10px] uppercase font-mono tracking-wider text-blue-400 hover:text-blue-300 transition-colors cursor-pointer group/link"
+                    >
+                      <span>Read</span>
+                      <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -159,29 +169,29 @@ export function HighlightsSection() {
           <div className="flex items-center gap-3 p-3 bg-white/[0.01] border border-white/10 rounded-lg text-left">
             <Award className="w-5 h-5 text-blue-400 shrink-0" />
             <div>
-              <div className="font-display font-bold text-xs text-white">Top Placements</div>
-              <p className="text-[10px] text-slate-300 font-sans">90%+ Employment Rate</p>
+              <div className="font-display font-bold text-sm text-white">Top Placements</div>
+              <p className="text-xs text-slate-200 font-sans font-medium">90%+ Employment Rate</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-3 bg-white/[0.01] border border-white/10 rounded-lg text-left">
             <Users className="w-5 h-5 text-blue-400 shrink-0" />
             <div>
-              <div className="font-display font-bold text-xs text-white font-sans">Active Clubs</div>
-              <p className="text-[10px] text-slate-300">ICT, Robo, AgroTech</p>
+              <div className="font-display font-bold text-sm text-white font-sans">Active Clubs</div>
+              <p className="text-xs text-white/90 font-bold">ICT, Robo, AgroTech</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-3 bg-white/[0.01] border border-white/10 rounded-lg text-left">
-            <BookOpen className="w-5 h-5 text-blue-400 shrink-0" />
+            <Globe className="w-5 h-5 text-blue-400 shrink-0" />
             <div>
-              <div className="font-display font-bold text-xs text-white">Innovation Lab</div>
-              <p className="text-[10px] text-slate-300">Dedicated Project Incubation Hubs</p>
+              <div className="font-display font-bold text-sm text-white">Global Reach</div>
+              <p className="text-xs text-white/90 font-bold">IEEE & Global Journals</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-3 bg-white/[0.01] border border-white/10 rounded-lg text-left">
-            <ExternalLink className="w-5 h-5 text-blue-400 shrink-0" />
+            <Rocket className="w-5 h-5 text-blue-400 shrink-0" />
             <div>
-              <div className="font-display font-bold text-xs text-white">Official FB Stream</div>
-              <p className="text-[10px] text-slate-300">@tech.rjt.ac.lk</p>
+              <div className="font-display font-bold text-sm text-white">Future Ready</div>
+              <p className="text-xs text-slate-200 font-medium">Project Incubation Hubs</p>
             </div>
           </div>
         </div>

@@ -10,14 +10,49 @@ import { DegreeSection } from "./components/DegreeSection";
 import { OverviewSection } from "./components/OverviewSection";
 import { HighlightsSection } from "./components/HighlightsSection";
 import { LocationSection } from "./components/LocationSection";
+import { Loader } from "./components/Loader";
+import { AnimatePresence } from "motion/react";
 import { AnimatedSectionContent } from "./components/AnimatedSectionContent";
 import { Compass, GraduationCap, School, Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState<string>("welcome");
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [scrollTop, setScrollTop] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Dismiss loader after loading is complete
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Wait for the loading bar to hit 100%
+    return () => clearTimeout(timer);
+  }, []);
+  
+  // Refs for background videos
+  const bpVideoRef = useRef<HTMLVideoElement>(null);
+  const ftVideoRef = useRef<HTMLVideoElement>(null);
+  const eeVideoRef = useRef<HTMLVideoElement>(null);
+  const mtVideoRef = useRef<HTMLVideoElement>(null);
+  const bictVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Play and reset videos dynamically based on the active scroll section
+  useEffect(() => {
+    // Helper to safely reset and play a video
+    const triggerVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
+      if (ref.current) {
+        ref.current.currentTime = 0;
+        ref.current.play().catch(() => {});
+      }
+    };
+
+    if (activeSection === 'bbst-bp') triggerVideo(bpVideoRef);
+    if (activeSection === 'bbst-ft') triggerVideo(ftVideoRef);
+    if (activeSection === 'bet-ee') triggerVideo(eeVideoRef);
+    if (activeSection === 'bet-mt') triggerVideo(mtVideoRef);
+    if (activeSection === 'bict') triggerVideo(bictVideoRef);
+  }, [activeSection]);
 
   // Set up all navigable sections in our snap flow
   const sections = [
@@ -87,35 +122,102 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-screen h-screen bg-[#030305] overflow-hidden text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
-      
+    <>
+      {/* Full Screen Loading Overlay */}
+      <AnimatePresence>
+        {isLoading && <Loader />}
+      </AnimatePresence>
+
+      <div 
+        ref={containerRef}
+        onScroll={handleScroll}
+        className="h-screen w-full overflow-y-auto snap-y snap-mandatory bg-[#030305] text-white selection:bg-[#22d3ee]/30 selection:text-[#22d3ee] relative"
+      >  
       {/* Global Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#030305]">
         {/* Seamless Image to Video Parallax Layer */}
         <div 
-          className="absolute inset-0 w-full h-full transition-opacity duration-300"
-          style={{ opacity: Math.max(0, 1 - (scrollTop / (typeof window !== 'undefined' ? window.innerHeight : 1000))) }}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'welcome' ? 'opacity-60' : 'opacity-0'}`}
         >
           <img 
             src="/src/assets/urajarata-uni.jpg" 
-            className="w-full h-full object-cover mix-blend-screen opacity-60"
+            className="w-full h-full object-cover mix-blend-screen"
             alt="Hero Background"
           />
         </div>
         
+        {/* Bioprocess Technology Video */}
         <div 
-          className="absolute inset-0 w-full h-full transition-opacity duration-300"
-          style={{ opacity: Math.min(1, (scrollTop / (typeof window !== 'undefined' ? window.innerHeight : 1000))) }}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'bbst-bp' ? 'opacity-100' : 'opacity-0'}`}
         >
           <video 
-            autoPlay 
-            loop 
+            ref={bpVideoRef}
             muted 
             playsInline 
-            className="w-full h-full object-cover mix-blend-screen opacity-70"
-            style={{ filter: "saturate(1.2) contrast(1.1)" }}
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.6) saturate(1.2) contrast(1.1)" }}
           >
             <source src="https://res.cloudinary.com/dpdsdpmgg/video/upload/generate_the_video_ugaff3.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Food Technology Video */}
+        <div 
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'bbst-ft' ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <video 
+            ref={ftVideoRef}
+            muted 
+            playsInline 
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.6) saturate(1.2) contrast(1.1)" }}
+          >
+            <source src="https://res.cloudinary.com/dpdsdpmgg/video/upload/generate_video_mapjqe.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Electrical Technology Video */}
+        <div 
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'bet-ee' ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <video 
+            ref={eeVideoRef}
+            muted 
+            playsInline 
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.6) saturate(1.2) contrast(1.1)" }}
+          >
+            <source src="https://res.cloudinary.com/dpdsdpmgg/video/upload/generate_video_mapjqe.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Materials Technology Video */}
+        <div 
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'bet-mt' ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <video 
+            ref={mtVideoRef}
+            muted 
+            playsInline 
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.6) saturate(1.2) contrast(1.1)" }}
+          >
+            <source src="https://res.cloudinary.com/dpdsdpmgg/video/upload/image_then_we_climde_stare_jakukr.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* BICT Video */}
+        <div 
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'bict' ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <video 
+            ref={bictVideoRef}
+            muted 
+            playsInline 
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.6) saturate(1.2) contrast(1.1)" }}
+          >
+            <source src="https://res.cloudinary.com/dpdsdpmgg/video/upload/image_then_we_climde_stare_1_izkd9u.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -133,12 +235,44 @@ export default function App() {
         className="w-24 h-screen border-r border-white/10 flex-col items-center py-12 justify-between bg-black/20 backdrop-blur-xl fixed top-0 left-0 z-50 hidden md:flex"
       >
         <div className="flex flex-col items-center gap-1 w-full">
-          {/* FOT Brand Box */}
+          {/* FOT Brand Logo (Animated Star in 'O' Shape) */}
           <div 
             onClick={() => scrollToSection("welcome")}
-            className="w-10 h-10 bg-cyan-500 rounded flex items-center justify-center font-display font-black text-black text-xl mb-12 hover:shadow-[0_0_15px_#22d3ee] transition-all duration-300 cursor-pointer"
+            className="relative w-14 h-14 mb-10 rounded-xl bg-black/40 border border-[#22d3ee]/40 flex items-center justify-center cursor-pointer group hover:border-[#22d3ee] hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-500 overflow-hidden"
           >
-            R
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/30 to-cyan-300/20 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* The SVG Logo */}
+            <svg viewBox="0 0 100 100" className="w-9 h-9 z-10 text-[#22d3ee] group-hover:text-cyan-200 transition-colors duration-500">
+              <defs>
+                <linearGradient id="logo-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="currentColor" />
+                  <stop offset="100%" stopColor="#67e8f9" />
+                </linearGradient>
+              </defs>
+              
+              {/* The 'O' Shape Outer Ring */}
+              <circle 
+                cx="50" cy="50" r="42" 
+                fill="none" 
+                stroke="url(#logo-gradient)" 
+                strokeWidth="8" 
+                strokeLinecap="round" 
+                strokeDasharray="75 40" 
+                className="origin-center animate-[spin_12s_linear_infinite]" 
+              />
+              
+              {/* The Star Shape Inner Geometry */}
+              <path 
+                d="M50 18 L55 45 L82 50 L55 55 L50 82 L45 55 L18 50 L45 45 Z" 
+                fill="url(#logo-gradient)" 
+                className="origin-center animate-[pulse_3s_ease-in-out_infinite]"
+              />
+              
+              {/* Center Core */}
+              <circle cx="50" cy="50" r="6" fill="#fff" className="origin-center animate-[pulse_1.5s_ease-in-out_infinite]" />
+            </svg>
           </div>
           
           {/* Navigation dots with hover text tooltip */}
@@ -168,10 +302,6 @@ export default function App() {
           </div>
         </div>
         
-        {/* Roated Bottom Text */}
-        <div className="rotate-[-90deg] whitespace-nowrap text-[9px] tracking-[0.3em] uppercase text-white/40 font-mono">
-          RJT SYSTEMA
-        </div>
       </nav>
 
       {/* 2. Global Floating Header (Styled to match Elegant Dark) */}
@@ -297,6 +427,7 @@ export default function App() {
           </>
         ), [activeSection])}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
