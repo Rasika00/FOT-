@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { DegreeProgram } from "../types";
 import * as Icons from "lucide-react";
@@ -11,7 +11,7 @@ interface DegreeSectionProps {
 // ----------------------------------------------------
 // DYNAMIC INTERACTIVE PARTICLES CANVAS FOR BICT
 // ----------------------------------------------------
-function InteractiveBictCanvas() {
+const InteractiveBictCanvas = memo(function InteractiveBictCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: 0, y: 0, hover: false });
 
@@ -95,12 +95,16 @@ function InteractiveBictCanvas() {
       ctx.lineWidth = 0.9;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
-          const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
-          if (dist < 95) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          if (Math.abs(dx) < 95 && Math.abs(dy) < 95) {
+            const dist = Math.hypot(dx, dy);
+            if (dist < 95) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
           }
         }
       }
@@ -142,7 +146,7 @@ function InteractiveBictCanvas() {
   }, []);
 
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-auto opacity-80 z-0" />;
-}
+});
 
 // Map of dynamic Lucide icons
 const getIconElement = (name: string, className = "w-5 h-5") => {
@@ -150,50 +154,51 @@ const getIconElement = (name: string, className = "w-5 h-5") => {
   return <IconComponent className={className} />;
 };
 
-export function DegreeSection({ program, isActive }: DegreeSectionProps) {
+// Style mapper for individual degree identities
+const colorMap: { [key: string]: { border: string; bgBtn: string; text: string; bgBadge: string; glow: string } } = {
+  emerald: {
+    border: "border-emerald-500/30 group-hover:border-emerald-500/60",
+    bgBtn: "bg-emerald-550 text-slate-950 bg-emerald-400 hover:bg-emerald-300",
+    text: "text-emerald-400",
+    bgBadge: "bg-emerald-950/40 border-emerald-500/30 text-emerald-400",
+    glow: "shadow-neon-green",
+  },
+  amber: {
+    border: "border-amber-500/30 group-hover:border-amber-500/60",
+    bgBtn: "bg-amber-550 text-slate-950 bg-amber-400 hover:bg-amber-300",
+    text: "text-amber-400",
+    bgBadge: "bg-amber-950/40 border-amber-500/30 text-amber-400",
+    glow: "shadow-neon-amber",
+  },
+  cyan: {
+    border: "border-cyan-500/30 group-hover:border-cyan-500/60",
+    bgBtn: "bg-cyan-550 text-slate-950 bg-cyan-400 hover:bg-cyan-300",
+    text: "text-cyan-400",
+    bgBadge: "bg-cyan-950/40 border-cyan-500/30 text-cyan-400",
+    glow: "shadow-neon-cyan",
+  },
+  purple: {
+    border: "border-purple-500/30 group-hover:border-purple-500/60",
+    bgBtn: "bg-purple-550 text-slate-950 bg-purple-400 hover:bg-purple-300",
+    text: "text-purple-400",
+    bgBadge: "bg-purple-950/40 border-purple-500/30 text-purple-400",
+    glow: "shadow-neon-purple",
+  },
+  sky: {
+    border: "border-sky-500/30 group-hover:border-sky-500/60",
+    bgBtn: "bg-sky-550 text-slate-950 bg-sky-400 hover:bg-sky-300",
+    text: "text-sky-400",
+    bgBadge: "bg-sky-950/40 border-sky-500/30 text-sky-450",
+    glow: "shadow-neon-blue",
+  },
+};
+
+export const DegreeSection = memo(function DegreeSection({ program, isActive }: DegreeSectionProps) {
   const [activeTab, setActiveTab] = useState<"pillars" | "curriculum" | "careers" | "aesthetic">("pillars");
   const [activeSemesterTab, setActiveSemesterTab] = useState<string>("Year 1");
 
-  // Style mapper for individual degree identities
-  const colorMap: { [key: string]: { border: string; bgBtn: string; text: string; bgBadge: string; glow: string } } = {
-    emerald: {
-      border: "border-emerald-500/30 group-hover:border-emerald-500/60",
-      bgBtn: "bg-emerald-550 text-slate-950 bg-emerald-400 hover:bg-emerald-300",
-      text: "text-emerald-400",
-      bgBadge: "bg-emerald-950/40 border-emerald-500/30 text-emerald-400",
-      glow: "shadow-neon-green",
-    },
-    amber: {
-      border: "border-amber-500/30 group-hover:border-amber-500/60",
-      bgBtn: "bg-amber-550 text-slate-950 bg-amber-400 hover:bg-amber-300",
-      text: "text-amber-400",
-      bgBadge: "bg-amber-950/40 border-amber-500/30 text-amber-400",
-      glow: "shadow-neon-amber",
-    },
-    cyan: {
-      border: "border-cyan-500/30 group-hover:border-cyan-500/60",
-      bgBtn: "bg-cyan-550 text-slate-950 bg-cyan-400 hover:bg-cyan-300",
-      text: "text-cyan-400",
-      bgBadge: "bg-cyan-950/40 border-cyan-500/30 text-cyan-400",
-      glow: "shadow-neon-cyan",
-    },
-    purple: {
-      border: "border-purple-500/30 group-hover:border-purple-500/60",
-      bgBtn: "bg-purple-550 text-slate-950 bg-purple-400 hover:bg-purple-300",
-      text: "text-purple-400",
-      bgBadge: "bg-purple-950/40 border-purple-500/30 text-purple-400",
-      glow: "shadow-neon-purple",
-    },
-    sky: {
-      border: "border-sky-500/30 group-hover:border-sky-500/60",
-      bgBtn: "bg-sky-550 text-slate-950 bg-sky-400 hover:bg-sky-300",
-      text: "text-sky-400",
-      bgBadge: "bg-sky-950/40 border-sky-500/30 text-sky-450",
-      glow: "shadow-neon-blue",
-    },
-  };
 
-  const scheme = colorMap[program.accentClass] || colorMap.cyan;
+  const scheme = useMemo(() => colorMap[program.accentClass] || colorMap.cyan, [program.accentClass]);
 
 
 
@@ -434,4 +439,4 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
       </div>
     </div>
   );
-}
+});

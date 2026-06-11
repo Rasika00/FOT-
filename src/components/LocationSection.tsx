@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "motion/react";
 import { MapPin, Navigation, Car, Bookmark, Anchor, Compass, PhoneCall } from "lucide-react";
 
-export function LocationSection() {
+export const LocationSection = memo(function LocationSection() {
   return (
     <div className="w-full h-full relative flex flex-col justify-center bg-transparent px-4 md:px-12 lg:px-24">
       {/* Background grids */}
@@ -109,4 +109,4 @@ export function LocationSection() {
       </div>
     </div>
   );
-}
+});

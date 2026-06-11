@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "motion/react";
 import { Sparkles, ThumbsUp, MessageSquare, Share2, Award, Users, BookOpen, ExternalLink, Globe, Rocket } from "lucide-react";
 
@@ -71,7 +71,7 @@ const HIGHLIGHTS: HighlightItem[] = [
   }
 ];
 
-export function HighlightsSection() {
+export const HighlightsSection = memo(function HighlightsSection() {
   return (
     <div className="w-full h-full relative flex flex-col justify-center bg-transparent px-4 md:px-12 lg:px-24">
       {/* Background Orbits */}
@@ -198,4 +198,4 @@ export function HighlightsSection() {
       </div>
     </div>
   );
-}
+});
