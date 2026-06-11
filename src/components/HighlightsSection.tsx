@@ -78,7 +78,7 @@ export function HighlightsSection() {
       <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-blue-500/5 rounded-full blur-[90px] pointer-events-none" />
       <div className="absolute inset-0 bg-cyber-grid pointer-events-none opacity-25" />
 
-      <div className="max-w-7xl mx-auto w-full z-10 flex flex-col justify-between max-h-[85vh] overflow-y-auto no-scrollbar py-6 md:py-12">
+      <div className="max-w-7xl mx-auto w-full z-10 flex flex-col justify-between max-h-[90dvh] overflow-y-auto no-scrollbar py-6 md:py-12">
         {/* Header Block with Slide Entrance */}
         <div className="text-left mb-6 sm:mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/30 backdrop-blur-md border border-blue-500/30 rounded-full text-blue-400 text-xs font-mono uppercase tracking-wider">

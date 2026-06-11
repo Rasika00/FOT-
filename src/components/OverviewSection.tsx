@@ -14,7 +14,7 @@ export function OverviewSection({ isActive }: OverviewSectionProps) {
       <div className="absolute inset-0 bg-cyber-grid pointer-events-none opacity-20" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none animate-[pulse-glow_10s_infinite]" />
 
-      <div className="max-w-4xl mx-auto w-full z-10 flex flex-col items-center justify-center max-h-[85vh] overflow-y-auto lg:overflow-visible no-scrollbar pt-12 pb-16 lg:pt-0 lg:pb-0">
+      <div className="max-w-4xl mx-auto w-full z-10 flex flex-col items-center justify-center max-h-[90dvh] overflow-y-auto lg:overflow-visible no-scrollbar pt-12 pb-16 lg:pt-0 lg:pb-0">
 
         {/* Center Column: Campus Info, Credentials, and Dean's Note */}
         <div className="w-full space-y-6 flex flex-col items-center justify-center text-center">

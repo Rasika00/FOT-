@@ -12,7 +12,7 @@
   .snap-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 100vh;
+    height: 100dvh;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
@@ -20,7 +20,7 @@
   .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     position: relative;
     overflow: hidden;

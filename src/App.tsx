@@ -12,6 +12,7 @@ import { HighlightsSection } from "./components/HighlightsSection";
 import { LocationSection } from "./components/LocationSection";
 import { Loader } from "./components/Loader";
 import { AnimatePresence } from "motion/react";
+import bgImage from "./assets/urajarata-uni.jpg";
 import { AnimatedSectionContent } from "./components/AnimatedSectionContent";
 import { Compass, GraduationCap, School, Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -131,7 +132,7 @@ export default function App() {
       <div 
         ref={containerRef}
         onScroll={handleScroll}
-        className="h-screen w-full overflow-y-auto snap-y snap-mandatory bg-[#030305] text-white selection:bg-[#22d3ee]/30 selection:text-[#22d3ee] relative"
+        className="h-dvh w-full overflow-y-auto snap-y snap-mandatory bg-[#030305] text-white selection:bg-[#22d3ee]/30 selection:text-[#22d3ee] relative"
       >  
       {/* Global Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#030305]">
@@ -140,7 +141,7 @@ export default function App() {
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${activeSection === 'welcome' ? 'opacity-60' : 'opacity-0'}`}
         >
           <img 
-            src="/src/assets/urajarata-uni.jpg" 
+            src={bgImage} 
             className="w-full h-full object-cover mix-blend-screen"
             alt="Hero Background"
           />
@@ -232,7 +233,7 @@ export default function App() {
       {/* 1. Elegant Dark Left-Docked Sidebar for Desktop */}
       <nav 
         aria-label="Elegant Sidebar Navigation" 
-        className="w-24 h-screen border-r border-white/10 flex-col items-center py-12 justify-between bg-black/20 backdrop-blur-xl fixed top-0 left-0 z-50 hidden md:flex"
+        className="w-24 h-dvh border-r border-white/10 flex-col items-center py-12 justify-between bg-black/20 backdrop-blur-xl fixed top-0 left-0 z-50 hidden md:flex"
       >
         <div className="flex flex-col items-center gap-1 w-full">
           {/* FOT Brand Logo (Animated Star in 'O' Shape) */}

@@ -25,7 +25,7 @@ export function FacultyHero({ isActive, onExplore }: FacultyHeroProps) {
         LOC://8.3551_N_80.5011_E // MIHINTALE, LK
       </div>
 
-      <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Main Brand Column */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
           {/* Institutional Tag */}

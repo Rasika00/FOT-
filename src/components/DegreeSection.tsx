@@ -209,7 +209,7 @@ export function DegreeSection({ program, isActive }: DegreeSectionProps) {
 
 
       {/* Primary Container Grid */}
-      <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full max-h-[85vh] overflow-y-auto lg:overflow-visible no-scrollbar pt-12 pb-16 lg:pt-0 lg:pb-0">
+      <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full max-h-[90dvh] overflow-y-auto lg:overflow-visible no-scrollbar pt-12 pb-16 lg:pt-0 lg:pb-0">
         
         {/* Left Column: Core Info & Details */}
         <div className="lg:col-span-6 text-left flex flex-col justify-center space-y-4 md:space-y-6">
