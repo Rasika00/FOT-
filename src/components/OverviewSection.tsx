@@ -49,7 +49,7 @@ export function OverviewSection({ isActive }: OverviewSectionProps) {
               <div className="space-y-1">
                 <h5 className="font-mono text-[10px] uppercase tracking-widest text-[#22d3ee]/60">Call Registrar</h5>
                 <p className="text-sm text-white font-sans leading-relaxed font-medium">
-                  +94 (0) 25 2266 380<br />
+                  +94 (0) 25<br />
                   <span className="text-slate-300">Mon - Fri: 8:30 AM - 4:15 PM</span>
                 </p>
               </div>
