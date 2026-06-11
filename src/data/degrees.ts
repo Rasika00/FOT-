@@ -239,7 +239,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "CML 2202",
           title: "Engineering Economics",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 1,
@@ -682,7 +682,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "CMT 2306",
           title: "Mathematics for Technology II",
           credits: "3",
-          status: "-"
+          status: "O"
         },
         {
           semester: 1,
@@ -696,7 +696,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "CML 2201",
           title: "Social Sciences and Humanities",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 1,
@@ -852,7 +852,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "FDT 3212",
           title: "Spices and Oil Processing Technology",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 2,
@@ -966,7 +966,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
   },
   {
     id: "bet-ee",
-    code: "BET (EE)",
+    code: "BET (EET)",
     title: "BET (Hons) in Electrical and Electronic Technology",
     department: "Department of Electrical and Electronic Technology",
     duration: "4 Years (8 Semesters)",
@@ -1213,17 +1213,24 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
         },
         {
           semester: 1,
-          code: "MTT",
-          title: "2204/EET 2207 Computer Aided Design (CAD)",
+          code: "MTT 2204/EET 2207 ",
+          title: "Computer Aided Design (CAD)",
           credits: "2",
           status: "O"
         },
         {
           semester: 2,
-          code: "CML",
-          title: "2204/CML 2205 Foreign Language/Ethics in Science and Tech",
-          credits: "2/2",
-          status: "O/C"
+          code: "CML 2204",
+          title: "Foreign Language",
+          credits: "2",
+          status: "O"
+        },
+        {
+          semester: 2,
+          code: "CML 2205",
+          title: "Ethics in Science and Tech",
+          credits: "2",
+          status: "C"
         },
         {
           semester: 2,
@@ -1316,7 +1323,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "EET 3210",
           title: "Electrical Installations",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 1,
@@ -1388,7 +1395,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "CML 4202",
           title: "Human Resources Management",
           credits: "2",
-          status: "C"
+          status: "O"
         },
         {
           semester: 1,
@@ -1402,7 +1409,7 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "EET 4206",
           title: "Automation Technology II",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 1,
@@ -1441,10 +1448,17 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
         },
         {
           semester: 1,
-          code: "EET",
-          title: "4304/EET 4305 Power Electronics/Digital Communication",
-          credits: "3/3",
-          status: "C/O"
+          code: "EET 4304",
+          title: "Power Electronics",
+          credits: "3",
+          status: "C"
+        },
+        {
+          semester: 1,
+          code: "EET 4305",
+          title: "Digital Communication",
+          credits: "3",
+          status: "O"
         },
         {
           semester: 1,
@@ -1500,28 +1514,28 @@ export const DEGREE_PROGRAMS: DegreeProgram[] = [
           code: "EET 4219",
           title: "Green Energy and Zero Emission Concepts",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 2,
           code: "EET 4220",
           title: "Graphical Programming and Data Acquisition",
           credits: "2",
-          status: "-"
+          status: "O"
         },
         {
           semester: 2,
           code: "EET 4311",
           title: "Internet Technology and Applications",
           credits: "3",
-          status: "-"
+          status: "O"
         },
         {
           semester: 2,
           code: "EET 4312",
           title: "Power System Analysis",
           credits: "3",
-          status: "-"
+          status: "O"
         },
         {
           semester: 2,

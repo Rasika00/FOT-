@@ -371,34 +371,43 @@ export const DegreeSection = memo(function DegreeSection({ program, isActive }: 
                     ))}
                   </div>
 
-                  <div className="flex-1 space-y-2 text-left">
-                    <p className="text-[10px] font-mono uppercase tracking-widest text-[#22d3ee]/60 flex items-center gap-1">
-                      <Icons.BookOpen className="w-3 h-3" />
-                      Sample Syllabus Courses for {activeSemesterTab}:
-                    </p>
-                    <div className="space-y-1.5">
-                      {program.curriculumSemesters[activeSemesterTab]?.map((subject, index) => (
-                        <div
-                          key={`${subject.code}-${index}`}
-                          className="px-3 py-1.5 bg-white/5 backdrop-blur-sm hover:bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-md flex items-center justify-between text-xs font-sans text-slate-200 transition-colors gap-2"
-                        >
-                          <div className="flex items-center gap-3 truncate">
-                            <span className="font-mono text-[10px] text-[#22d3ee]/70 shrink-0">{subject.code}</span>
-                            <span className="font-medium truncate" title={subject.title}>{subject.title}</span>
-                          </div>
-                          <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="text-[9px] font-mono text-slate-400 bg-black/20 px-1 py-0.5 rounded border border-white/5">{subject.credits} CR</span>
-                            <span className={`text-[9px] font-mono uppercase tracking-widest px-1 py-0.5 rounded border ${
-                              subject.status.startsWith('C') ? 'text-emerald-300 bg-emerald-950/30 border-emerald-500/20' : 
-                              subject.status.startsWith('O') ? 'text-amber-300 bg-amber-950/30 border-amber-500/20' : 
-                              'text-slate-300 bg-slate-900/50 border-white/10'
-                            }`}>
-                              {subject.status.startsWith('C') ? 'CORE' : subject.status.startsWith('O') ? 'OPTIONAL' : subject.status}
-                            </span>
+                  <div className="flex-1 space-y-4 text-left mt-2">
+                    {[1, 2].map((semesterNum) => {
+                      const semSubjects = program.curriculumSemesters[activeSemesterTab]?.filter(s => s.semester === semesterNum) || [];
+                      if (semSubjects.length === 0) return null;
+
+                      return (
+                        <div key={semesterNum} className="space-y-2">
+                          <p className="text-[10px] font-mono uppercase tracking-widest text-[#22d3ee]/60 flex items-center gap-1 border-b border-white/10 pb-1">
+                            <Icons.BookOpen className="w-3 h-3" />
+                            Semester {semesterNum}
+                          </p>
+                          <div className="space-y-1.5">
+                            {semSubjects.map((subject, index) => (
+                              <div
+                                key={`${subject.code}-${index}`}
+                                className="px-3 py-1.5 bg-white/5 backdrop-blur-sm hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-md flex items-center justify-between text-xs font-sans text-slate-200 transition-colors gap-2"
+                              >
+                                <div className="flex items-center gap-3 min-w-0">
+                                  <span className="font-mono text-[10px] text-[#22d3ee]/70 shrink-0 w-16">{subject.code}</span>
+                                  <span className="font-medium truncate" title={subject.title}>{subject.title}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5 shrink-0">
+                                  <span className="text-[9px] font-mono text-slate-400 bg-black/20 px-1 py-0.5 rounded border border-white/5">{subject.credits} CR</span>
+                                  <span className={`text-[9px] font-mono uppercase tracking-widest px-1 py-0.5 rounded border ${
+                                    subject.status.startsWith('C') ? 'text-emerald-300 bg-emerald-950/30 border-emerald-500/20' : 
+                                    subject.status.startsWith('O') ? 'text-amber-300 bg-amber-950/30 border-amber-500/20' : 
+                                    'text-slate-300 bg-slate-900/50 border-white/10'
+                                  }`}>
+                                    {subject.status.startsWith('C') ? 'CORE' : subject.status.startsWith('O') ? 'OPTIONAL' : subject.status}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      );
+                    })}
                   </div>
                 </motion.div>
               )}
@@ -413,6 +422,7 @@ export const DegreeSection = memo(function DegreeSection({ program, isActive }: 
                   className="space-y-4 h-full flex flex-col justify-center"
                 >
                   <p className="text-xs font-mono uppercase tracking-widest text-slate-200 text-left">Industrial Placement Targets & Academic Prospects</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400 text-left mt-1.5 mb-4 italic">Note: These represent just a selection of the many diverse career pathways available to our graduates.</p>
                   <div className="relative border-l border-white/10 ml-3 space-y-4">
                     {program.careerPaths.map((career, i) => (
                       <div key={career} className="relative pl-6 text-left group">

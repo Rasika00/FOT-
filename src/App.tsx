@@ -19,8 +19,6 @@ import { Compass, GraduationCap, School, Menu, X, ArrowUpRight } from "lucide-re
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState<string>("welcome");
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [scrollTop, setScrollTop] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Dismiss loader after loading is complete
@@ -38,21 +36,28 @@ export default function App() {
   const mtVideoRef = useRef<HTMLVideoElement>(null);
   const bictVideoRef = useRef<HTMLVideoElement>(null);
 
-  // Play and reset videos dynamically based on the active scroll section
+  // Play and reset videos dynamically based on the active scroll section, and pause inactive ones
   useEffect(() => {
     // Helper to safely reset and play a video
-    const triggerVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
+    const playVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
       if (ref.current) {
         ref.current.currentTime = 0;
         ref.current.play().catch(() => {});
       }
     };
+    
+    // Helper to pause a video
+    const pauseVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
+      if (ref.current) {
+        ref.current.pause();
+      }
+    };
 
-    if (activeSection === 'bbst-bp') triggerVideo(bpVideoRef);
-    if (activeSection === 'bbst-ft') triggerVideo(ftVideoRef);
-    if (activeSection === 'bet-ee') triggerVideo(eeVideoRef);
-    if (activeSection === 'bet-mt') triggerVideo(mtVideoRef);
-    if (activeSection === 'bict') triggerVideo(bictVideoRef);
+    activeSection === 'bbst-bp' ? playVideo(bpVideoRef) : pauseVideo(bpVideoRef);
+    activeSection === 'bbst-ft' ? playVideo(ftVideoRef) : pauseVideo(ftVideoRef);
+    activeSection === 'bet-ee' ? playVideo(eeVideoRef) : pauseVideo(eeVideoRef);
+    activeSection === 'bet-mt' ? playVideo(mtVideoRef) : pauseVideo(mtVideoRef);
+    activeSection === 'bict' ? playVideo(bictVideoRef) : pauseVideo(bictVideoRef);
   }, [activeSection]);
 
   // Set up all navigable sections in our snap flow
@@ -97,14 +102,15 @@ export default function App() {
     };
   }, []);
 
-  // Track overall scroll progress for a sleek top-dock status bar
+  // Track overall scroll progress without causing React re-renders using a ref
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
-    setScrollTop(target.scrollTop);
     const scrollHeight = target.scrollHeight - target.clientHeight;
-    if (scrollHeight > 0) {
+    if (scrollHeight > 0 && progressBarRef.current) {
       const progress = (target.scrollTop / scrollHeight) * 100;
-      setScrollProgress(progress);
+      progressBarRef.current.style.width = `${progress}%`;
     }
   };
 
@@ -324,8 +330,9 @@ export default function App() {
       {/* 3. Top-dock Scroll Progress Bar */}
       <div className="fixed top-0 inset-x-0 h-[2px] bg-white/10 z-50 pointer-events-none">
         <div 
+          ref={progressBarRef}
           className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 transition-all duration-100 shadow-[0_0_8px_rgba(34,211,238,0.5)]" 
-          style={{ width: `${scrollProgress}%` }}
+          style={{ width: "0%" }}
         />
       </div>
 
