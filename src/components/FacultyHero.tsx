@@ -20,10 +20,6 @@ export function FacultyHero({ isActive, onExplore }: FacultyHeroProps) {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] animate-[pulse-glow_8s_infinite] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] animate-[pulse-glow_12s_infinite] pointer-events-none" />
 
-      {/* Decorative Top-Left Coordinates of Mihintale, Sri Lanka (Actual coords: 8.3551° N, 80.5011° E) */}
-      <div className="absolute top-8 left-8 md:top-12 md:left-12 font-mono text-[10px] tracking-widest text-[#22d3ee]/60 hidden md:block">
-        LOC://8.3551_N_80.5011_E // MIHINTALE, LK
-      </div>
 
       <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Main Brand Column */}

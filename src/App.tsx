@@ -303,25 +303,8 @@ export default function App() {
         
       </nav>
 
-      {/* 2. Global Floating Header (Styled to match Elegant Dark) */}
-      <header className="fixed top-0 md:left-24 right-0 h-20 z-40 px-6 md:px-12 pointer-events-none flex items-center justify-between">
-        {/* Abstract blur background mask */}
-        <div className="absolute inset-0 bg-black/10 backdrop-blur-md pointer-events-none border-b border-white/5" />
+      <header className="fixed top-0 md:left-24 right-0 h-20 z-40 px-6 md:px-12 pointer-events-none flex items-center justify-end">
 
-        {/* Branding Badge (Interactive Click returns home) */}
-        <div 
-          onClick={() => scrollToSection("welcome")}
-          className="pointer-events-auto flex items-center gap-3 cursor-pointer group"
-        >
-          <div className="flex flex-col text-left">
-            <span className="font-display font-black text-sm tracking-widest text-[#22d3ee] group-hover:text-white transition-colors">
-              FOT // RAJARATA
-            </span>
-            <span className="font-mono text-[9px] tracking-widest text-white/60 uppercase leading-none">
-              Faculty of Technology
-            </span>
-          </div>
-        </div>
 
         {/* Header Navigation Actions */}
         <div className="pointer-events-auto flex items-center gap-6 text-[10px] uppercase tracking-widest font-mono font-medium text-white/60">
